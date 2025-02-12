@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";//importing hooks from eact
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
 function Post() {
   let { id } = useParams();
   const [postObject, setPostObject] = useState({});
-  const [comments, setComments] = useState([]);
-  const [newComment, setNewComment] = useState("");
+  const [comments, setComments] = useState([]);//nampung data dalam bentuk array
+  const [newComment, setNewComment] = useState("");//nampung data dalam bentuk string
 
-  useEffect(() => {
-    axios.get(`http://localhost:3001/posts/byId/${id}`).then((response) => {
-      setPostObject(response.data);
+  useEffect(() => { //write inside here the logic you wanna run when the page renders
+    axios.get(`http://localhost:3001/posts/byId/${id}`).then((response) => {//after receiveng the data from axios.get, then datanya disimpan di response
+      setPostObject(response.data);//
     });
 
     axios.get(`http://localhost:3001/comments/${id}`).then((response) => {
