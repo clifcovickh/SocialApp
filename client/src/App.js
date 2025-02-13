@@ -17,6 +17,7 @@ function App() {
           <Link to="/registration"> Registration</Link>
         </div>
         <Switch>
+          {/* all routes are placed in between the switch */}
           <Route path="/" exact component={Home} />
           <Route path="/createpost" exact component={CreatePost} />
           <Route path="/post/:id" exact component={Post} />
@@ -29,3 +30,6 @@ function App() {
 }
 
 export default App;
+
+//structure of our routes are placed in this file 
+//the navbar keliatan disemua cus its placed on top of the routes   
